@@ -1,0 +1,19 @@
+name: script-executer
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  script-executer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v1
+      - name: Change directory to the project root directory
+      - run: cd bash-hello
+      - name: Make file executable
+      - run: chmod +x its-me.sh
+      - name: Execute script 
+      - run: ./its-me.sh
+    
